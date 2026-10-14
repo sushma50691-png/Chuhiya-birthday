@@ -2,91 +2,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Birthday Chuhiya 💗</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffd4e8"><title>Chuhiya and the 15 Secret Doors 💗</title>
 <style>
-body{margin:0;background:#fff0f5;color:#75445c;font-family:Arial,sans-serif;text-align:center}
-header{padding:40px 15px;background:linear-gradient(135deg,#ffd6e7,#ffe9d2);border-radius:0 0 30px 30px}
-h1,h2{color:#d6538a}
-main{max-width:600px;margin:auto;padding:16px}
-.card{background:white;padding:22px;margin:18px 0;border-radius:24px;box-shadow:0 5px 20px #e9a9c333}
-button{border:0;border-radius:20px;background:#ec8eb5;color:white;padding:12px;margin:5px;font-size:16px}
-#letter{display:none;line-height:1.8;text-align:left;white-space:pre-line}
-.heart{position:fixed;bottom:-30px;animation:float 7s linear infinite;pointer-events:none}
-@keyframes float{to{transform:translateY(-110vh);opacity:0}}
-</style>
-</head>
-<body>
-<header>
-<div style="font-size:48px">🎀 🌷 🧸</div>
-<h1>Happy Birthday Chuhiya!</h1>
-<p>A little world made just for YOU 💗</p>
-<p>30 October — your special day ✨</p>
-</header>
+*{box-sizing:border-box} :root{--pink:#ef4b9b;--deep:#a63870;--ink:#713650;--pale:#fff0f7}
+body{margin:0;color:var(--ink);font-family:system-ui,"Trebuchet MS",sans-serif;background:radial-gradient(circle at 10% 15%,#fff 0 2px,transparent 3px),linear-gradient(145deg,#ffe0ef,#fff8fc 50%,#eadfff);background-size:30px 30px,auto;min-height:100vh;overflow-x:hidden}
+header{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:13px 14px;font-size:12px;font-weight:900;letter-spacing:.5px}header span{background:#ffffffc9;border:1px solid white;border-radius:99px;padding:9px 12px}
+#meter{height:7px;margin:0 14px;background:#ffffffb8;border-radius:99px;overflow:hidden;position:relative;z-index:1}#fill{height:100%;width:6.6%;background:linear-gradient(90deg,#ff70b3,#bfa0ff);transition:width .35s}
+main{position:relative;z-index:1;max-width:690px;margin:auto;padding:14px 13px 100px}.page{display:none;animation:enter .35s ease}.page.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
+.card{background:#ffffffdf;border:2px solid #fff;border-radius:28px;padding:24px 17px;box-shadow:0 12px 34px #ca6c9a24;text-align:center;backdrop-filter:blur(7px)}
+h1{font-size:clamp(34px,9vw,53px);line-height:1.02;color:#d83d8b;margin:12px 0}h2{font-size:clamp(25px,6vw,34px);line-height:1.1;color:#d83d8b;margin:12px 0}p{line-height:1.7;margin:10px 0}.tag{font-size:11px;font-weight:950;letter-spacing:2px;text-transform:uppercase;color:#c13c81}.art{font-size:clamp(52px,15vw,88px);margin:15px 0;filter:drop-shadow(0 6px 3px #dc78a326);animation:bob 2.4s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+.btn{display:inline-block;margin:7px 3px 0;padding:12px 17px;border:0;border-radius:99px;background:linear-gradient(130deg,#ff79b8,#ed4195);color:white;font-weight:900;box-shadow:0 5px 0 #ce327c;cursor:pointer}.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #ce327c}.btn.alt{background:#fff;color:#bf3d81;border:2px solid #ffc5df;box-shadow:0 4px 0 #f3c1d9}.clue,.feedback{padding:13px;margin:13px 0;border:1px dashed #e98bb8;border-radius:17px;background:#fff3f9;line-height:1.7}.feedback{min-height:48px}.option{display:block;width:100%;padding:12px;margin:8px 0;border:2px solid #ffd0e4;border-radius:15px;background:#fff1f8;color:#793653;font-weight:800;cursor:pointer}.option:active{background:#ffddeb}.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.tile{padding:14px 4px;min-height:104px;border-radius:18px;border:2px solid #ffd0e4;background:#fff0f7;color:#783450;font-weight:800;cursor:pointer}.tile b{display:block;font-size:32px;margin-bottom:6px}.tile.open{background:#fff8dc;border-color:#ffda83}.letter{text-align:left;white-space:pre-line;line-height:1.85;padding:17px;background:#fff5fa;border:1px solid #ffd4e7;border-radius:18px}.small{font-size:12px;opacity:.72}input,textarea{width:100%;font:inherit;padding:12px;border:2px solid #ffc6df;border-radius:14px;background:#fffafd;color:#713650;margin:7px 0}textarea{min-height:90px}.nav{position:fixed;z-index:5;bottom:0;left:0;right:0;display:flex;gap:4px;justify-content:center;padding:8px 5px calc(8px + env(safe-area-inset-bottom));background:#fffaf2ee;border-top:1px solid #ffd5e8;backdrop-filter:blur(10px)}.nav button{flex:1;max-width:125px;min-width:0;padding:10px 2px;border:0;border-radius:12px;background:#ffedf5;color:#a83c76;font-size:11px;font-weight:900;cursor:pointer}.nav button.on{background:#ed4a9a;color:white}.float{position:fixed;z-index:0;bottom:-30px;pointer-events:none;animation:rise 5s linear forwards}@keyframes rise{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}.stamp{display:inline-block;background:#fff0f7;border:1px solid #ffc9e1;border-radius:99px;padding:7px 10px;font-size:12px;font-weight:850;margin:3px}@media(min-width:600px){.card{padding:32px}.nav button{font-size:12px}}
+</style></head>
+<body><div id="sky"></div>
+<header><span>👑 CHUHIYA'S SECRET KINGDOM</span><span>💗 <b id="stars">0</b> stars</span></header>
+<div id="meter"><div id="fill"></div></div>
 <main>
-<section class="card">
-<h2>🌸 Your little personality quiz</h2>
-<p>Choose your perfect day</p>
-<button onclick="show('A cozy day with snacks and comfort ☁️')">Cozy day ☁️</button>
-<button onclick="show('An adventure full of new memories 🌈')">Adventure 🌈</button>
-<p>Pick your magic</p>
-<button onclick="show('A sky full of stars and wishes 🌟')">Stars 🌟</button>
-<button onclick="show('A garden full of flowers 🌷')">Flowers 🌷</button>
-<p id="answer">Choose anything that makes u smile 💗</p>
-</section>
-<section class="card">
-<h2>🎁 Mystery gift boxes</h2>
-<p>Tap a gift to reveal a surprise</p>
-<button style="font-size:35px" onclick="gift(0)">🎁</button>
-<button style="font-size:35px" onclick="gift(1)">🎀</button>
-<button style="font-size:35px" onclick="gift(2)">🧸</button>
-<p id="gift">Which one is calling ur name? 👀</p>
-</section>
-<section class="card">
-<h2>🌈 Your dream life</h2>
-<p>What's one thing u want to experience?</p>
-<input id="dream" placeholder="A dream u want to achieve" style="padding:12px;width:80%;border:1px solid pink;border-radius:12px">
-<p><button onclick="dream()">Save my wish 💌</button></p>
-<p id="wish"></p>
-</section>
-<section class="card">
-<h2>💌 A letter for u</h2>
-<p>This is about YOU and all the things that make u special</p>
-<button onclick="document.getElementById('letter').style.display='block';this.style.display='none'">Open ur letter 💗</button>
-<div id="letter">Happy birthday to u, my chuhiya 🌷💗
+<section class="page active" id="p0"><div class="card"><div class="tag">sealed invitation · open only if you're Chuhiya</div><div class="art">🧸💗🐻</div><span class="stamp">Gubbu & Bubbu's mission</span><h1>The 15 Secret Doors<br>of Chuhiya</h1><p>A tiny pink kingdom has appeared just for u. There are secret clues, locked rooms, tiny creatures, mystery gifts and one final birthday treasure.</p><div class="clue">🔐 Mission: collect stars, solve the riddles and discover who the kingdom was made for.</div><button class="btn" onclick="go(1)">Open the invitation 💌</button><p class="small">Best on a phone · tap everything that looks suspicious 🎀</p></div></section>
+<section class="page" id="p1"><div class="card"><div class="tag">door 01 · the royal gate</div><div class="art">🏰🌙✨</div><h2>The gate knows ur name</h2><p>The tiny guards need to know who has arrived.</p><input id="name" placeholder="Enter the princess's name…"><button class="btn" onclick="nameGate()">Knock knock 🔔</button><div class="feedback" id="nameOut">Hint: the invitation was made for one very special chuhiya.</div><button class="btn alt" onclick="go(2)">Go to the moon garden →</button></div></section>
+<section class="page" id="p2"><div class="card"><div class="tag">door 02 · moon garden</div><div class="art">🌙🌷🧚🏻</div><h2>The whispering flowers</h2><p>One flower whispers: “I get bigger when shared, and smaller when hidden away. What am I?”</p><button class="option" onclick="check(2,0)">A grumpy secret 😤</button><button class="option" onclick="check(2,1)">Happiness 💗</button><button class="option" onclick="check(2,2)">A shoe 👟</button><div class="feedback" id="f2">Pick the answer the fairy is waiting for.</div><button class="btn" onclick="go(3)">Follow the fireflies ✨</button></div></section>
+<section class="page" id="p3"><div class="card"><div class="tag">door 03 · firefly trail</div><div class="art">🪄🪲✨</div><h2>Catch a lucky firefly</h2><p>Three fireflies, one carries a star. Tap one to see what it brought u.</p><div class="tiles"><button class="tile" onclick="firefly(0)" id="fly0"><b>🪲</b>Firefly A</button><button class="tile" onclick="firefly(1)" id="fly1"><b>🪲</b>Firefly B</button><button class="tile" onclick="firefly(2)" id="fly2"><b>🪲</b>Firefly C</button></div><div class="feedback" id="flyOut">Each one has a tiny surprise!</div><button class="btn" onclick="go(4)">Enter the puzzle library 📚</button></div></section>
+<section class="page" id="p4"><div class="card"><div class="tag">door 04 · puzzle library</div><div class="art">📚🦉🔎</div><h2>The owl's riddle</h2><p>I have hands but cannot clap. I tell u when moments pass. What am I?</p><button class="option" onclick="check(4,0)">A teddy bear 🧸</button><button class="option" onclick="check(4,1)">A clock 🕰️</button><button class="option" onclick="check(4,2)">A cupcake 🧁</button><div class="feedback" id="f4">The owl is waiting very patiently…</div><button class="btn" onclick="go(5)">Find the velvet key 🗝️</button></div></section>
+<section class="page" id="p5"><div class="card"><div class="tag">door 05 · velvet key</div><div class="art">🗝️🎀🔒</div><h2>Three keys, one door</h2><p>Only one key opens the door. Choose the key that belongs in a birthday kingdom.</p><button class="option" onclick="check(5,0)">A rusty old key 🗝️</button><button class="option" onclick="check(5,1)">A chocolate key 🍫</button><button class="option" onclick="check(5,2)">A heart-shaped pink key 💗</button><div class="feedback" id="f5">The lock has a little heart carved into it…</div><button class="btn" onclick="go(6)">Unlock the secret room →</button></div></section>
 
-Today is about YOU. Your happiness, your dreams, your little interests, your growth and every beautiful thing that makes u who u are.
+<section class="page" id="p6"><div class="card"><div class="tag">door 06 · teddy disco</div><div class="art" id="dance">🧸🪩🐻</div><h2>The teddy bear dance party</h2><p>Gubbu and Bubbu have been waiting all day for their favourite princess. Tap the button to start their royal dance!</p><button class="btn" onclick="dance()">Start the teddy disco 🪩</button><div class="feedback" id="danceOut">The teddies are standing awkwardly near the speakers…</div><button class="btn alt" onclick="go(7)">Go to the birthday bakery →</button></div></section>
+<section class="page" id="p7"><div class="card"><div class="tag">door 07 · birthday bakery</div><div class="art" id="cake">🎂</div><h2>A cake with a secret</h2><p>Before u can open the next door, the birthday candles need to be blown out. Tap each candle!</p><div class="tiles"><button class="tile" onclick="candle(0)" id="c0"><b>🕯️</b>Candle 1</button><button class="tile" onclick="candle(1)" id="c1"><b>🕯️</b>Candle 2</button><button class="tile" onclick="candle(2)" id="c2"><b>🕯️</b>Candle 3</button></div><div class="feedback" id="cakeOut">Make a wish before the last candle goes out ✨</div><button class="btn" onclick="go(8)">Visit the mystery gift shop 🎁</button></div></section>
+<section class="page" id="p8"><div class="card"><div class="tag">door 08 · mystery gift shop</div><div class="art">🎁🎀🎁</div><h2>Choose ur first gift</h2><p>One gift has a secret message hidden inside. Pick carefully, princess.</p><div class="tiles"><button class="tile" onclick="gift(0)" id="g0"><b>🎁</b>Gift A</button><button class="tile" onclick="gift(1)" id="g1"><b>🎀</b>Gift B</button><button class="tile" onclick="gift(2)" id="g2"><b>💝</b>Gift C</button></div><div class="feedback" id="giftOut">One gift is full of sparkles. Another is full of hugs. What is the third one hiding?</div><button class="btn" onclick="go(9)">Explore the memory aquarium 🫧</button></div></section>
+<section class="page" id="p9"><div class="card"><div class="tag">door 09 · memory aquarium</div><div class="art">🐠🫧🪼</div><h2>Three floating memories</h2><p>Tap the bubbles to uncover little reminders of the lovely things that make someone special.</p><div class="tiles"><button class="tile" onclick="bubble(0)" id="b0"><b>🫧</b>Bubble 1</button><button class="tile" onclick="bubble(1)" id="b1"><b>🫧</b>Bubble 2</button><button class="tile" onclick="bubble(2)" id="b2"><b>🫧</b>Bubble 3</button></div><div class="feedback" id="bubbleOut">Some treasures are tiny moments that stay in ur heart 💗</div><button class="btn" onclick="go(10)">Find the password chamber 🔐</button></div></section>
+<section class="page" id="p10"><div class="card"><div class="tag">door 10 · password chamber</div><div class="art">🔐💌🗝️</div><h2>The secret password</h2><p>The final lock before the wishing room asks for the nickname of the princess who owns this kingdom.</p><input id="pass" placeholder="Type the secret nickname…"><button class="btn" onclick="password()">Unlock the chamber 🔓</button><div class="feedback" id="passOut">Hint: the name is hidden in the website's invitation…</div><button class="btn alt" onclick="go(11)">Try the wishing stars instead →</button></div></section>
+<section class="page" id="p11"><div class="card"><div class="tag">door 11 · wishing stars</div><div class="art">🌠🌙⭐</div><h2>Make a tiny wish</h2><p>Choose a star and let it carry a little wish into the universe.</p><div class="tiles"><button class="tile" onclick="wish(0)" id="w0"><b>⭐</b>Star 1</button><button class="tile" onclick="wish(1)" id="w1"><b>🌟</b>Star 2</button><button class="tile" onclick="wish(2)" id="w2"><b>💫</b>Star 3</button></div><div class="feedback" id="wishOut">May ur next little chapter bring u reasons to smile ✨</div><button class="btn" onclick="go(12)">Open the royal letter 💌</button></div></section>
+<section class="page" id="p12"><div class="card"><div class="tag">door 12 · royal letter</div><div class="art">💌🌷👑</div><h2>A letter for Chuhiya</h2><div class="letter">To the girl who owns this tiny kingdom 💗
 
-I hope this new year of ur life brings u peaceful mornings, genuine laughter, exciting opportunities and people who appreciate the person u are. I hope u get to try things u have always wanted to try and visit places that make ur heart feel full.
+Dear Chuhiya,
 
-U don't have to be perfect to deserve good things. U deserve kindness on the days u feel confident and on the days u doubt yourself too. U deserve rest without guilt, happiness without a reason and the freedom to grow into whoever u want to become.
+If this little world could give u one thing, it would be a reminder that u deserve kindness, laughter, peaceful days and all the little things that make ur heart happy
 
-I hope u keep discovering new things about yourself and become proud of how far u have come. I hope the little things that make u smile never become boring and life surprises u in the sweetest ways.
+May u always have reasons to smile at random moments, people who listen when u speak, and dreams that make u excited about tomorrow
 
-Thank u for being the person u are. I hope today makes u feel celebrated, appreciated and genuinely happy.
+And whenever life feels a little too loud, I hope u remember that even the smallest things can bring a little magic back into an ordinary day
 
-Make wishes, eat something yummy, laugh a lot and enjoy YOUR day to the fullest.
-
-Happy birthday once again, chuhiya 🎂🎀🌷
-
-May this chapter be softer, brighter, kinder and full of dreams coming true.
-
-Always keep a little space in ur life for wonder 💗
-
-Someone who really wants to see u happy 🌸</div>
-</section>
+With a kingdom full of pink hearts,
+Gubbu & Bubbu 🧸🐻</div><button class="btn" onclick="go(13)">Meet the dream keeper 🌈</button></div></section>
+<section class="page" id="p13"><div class="card"><div class="tag">door 13 · dream keeper</div><div class="art">🧚🏻🌈🦋</div><h2>The dream keeper's challenge</h2><p>The dream keeper asks: which treasure can u give someone without spending a single coin?</p><button class="option" onclick="check(13,0)">A diamond crown 💎</button><button class="option" onclick="check(13,1)">Time and kindness 💗</button><button class="option" onclick="check(13,2)">A golden castle 🏰</button><div class="feedback" id="f13">Think of something that can make someone's day better.</div><button class="btn" onclick="go(14)">Approach the final vault 🔮</button></div></section>
+<section class="page" id="p14"><div class="card"><div class="tag">door 14 · final vault</div><div class="art">🔮💖🔒</div><h2>The last little lock</h2><p>U have collected clues from the kingdom. What should open the final vault?</p><button class="option" onclick="check(14,0)">Being the richest princess 👑</button><button class="option" onclick="check(14,1)">A heart full of kindness 💗</button><button class="option" onclick="check(14,2)">A mountain of chocolate 🍫</button><div class="feedback" id="f14">The vault glows when it senses something truly precious…</div><button class="btn" onclick="go(15)">Reveal the final surprise 🎉</button></div></section>
+<section class="page" id="p15"><div class="card"><div class="tag">door 15 · birthday finale</div><div class="art">🎉🎂👑💗</div><h1>Happy Birthday<br>Chuhiya!</h1><p>U made it through all 15 secret doors! Gubbu and Bubbu are throwing the biggest tiny party in the kingdom just for u</p><div class="clue">💗 May ur birthday be filled with laughter and sweet surprises and may the year ahead bring u new adventures and beautiful memories</div><div class="art">🧸💐🐻</div><p><b>Official title:</b> Princess of the Pink Kingdom</p><button class="btn" onclick="celebrate()">Release the birthday magic 🎊</button><button class="btn alt" onclick="go(0)">Start the adventure again ↺</button><div class="feedback" id="finalOut">The teddies are ready when u are…</div></div></section>
 </main>
-<footer>Made with pink sparkles and birthday wishes 💗🎂</footer>
+<nav class="nav"><button id="prev" onclick="go(current-1)">← Back</button><button class="on" onclick="go(0)">🏰 Home</button><button id="next" onclick="go(current+1)">Next →</button></nav>
 <script>
-function show(t){document.getElementById('answer').textContent=t}
-function gift(n){document.getElementById('gift').textContent=[
-'🌷 U deserve kindness and beautiful days',
-'🎀 Do one little thing today just for YOUR happiness',
-'🧸 Remember to rest and be proud of yourself'
-][n]}
-function dream(){let v=document.getElementById('dream').value;document.getElementById('wish').textContent=v?'Your dream matters! Keep believing in yourself 💗':'Write a wish first 🌸'}
-for(let i=0;i<10;i++){let h=document.createElement('div');h.className='heart';h.textContent=['💗','🌸','✨'][i%3];h.style.left=(i*10)+'%';h.style.animationDelay=i%7+'s';document.body.appendChild(h)}
+let current=0,stars=0,seen=new Set(),candles=new Set(),gifts=new Set(),bubbles=new Set(),wishes=new Set(),flies=new Set();
+function go(n){if(n<0||n>15)return;document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p'+n).classList.add('active');current=n;document.getElementById('prev').style.opacity=n===0?'.45':'1';document.getElementById('next').style.opacity=n===15?'.45':'1';document.getElementById('fill').style.width=((n+1)/16*100)+'%';document.querySelectorAll('.nav button').forEach((b,i)=>b.classList.toggle('on',i===1&&n===0));window.scrollTo({top:0,behavior:'smooth'});sparkles(4)}
+function score(key,amount=1){if(seen.has(key))return;seen.add(key);stars+=amount;document.getElementById('stars').textContent=stars}
+function nameGate(){let v=document.getElementById('name').value.trim().toLowerCase();let out=document.getElementById('nameOut');if(v.includes('chuhiya')||v.includes('chuhiya')||v.includes('chu')){out.textContent='The guards cheer: WELCOME HOME CHUHIYA! The gate opens for u 💗';score('name');sparkles(18)}else{out.textContent='Hmm the guards are looking for Chuhiya! Try her special nickname 💗'}}
+function check(page,choice){let correct={2:1,4:1,5:2,13:1,14:1};let out=document.getElementById('f'+page);if(choice===correct[page]){out.textContent=['Lovely choice! The flowers sparkle because happiness grows when shared 💗','The owl flaps its wings: correct! Time has hands but cannot clap 🦉','The heart-shaped key fits perfectly! Click… the lock opens 💗','The dream keeper smiles: time and kindness are priceless treasures 🌈','The vault opens to kindness — the most precious treasure of all 💖'][{2:0,4:1,5:2,13:3,14:4}[page]];score('riddle'+page);sparkles(10)}else{out.textContent='Not quite, little detective! Try another answer — u can do it 🎀'}}
+function firefly(n){if(fl iesFix()){} }
 </script>
-</body>
-</html>
+
+<script>
+let current = 0;
+let stars = 0;
+let seen = new Set();
+let candles = 0;
+let gifts = 0;
+let bubbles = 0;
+let wishes = [];
+let flies = 0;
+
+function go(n) {
+  const target = document.getElementById("p" + n);
+  if (!target) return;
+
+  document.querySelectorAll(".page").forEach(p => {
+    p.style.display = "none";
+    p.classList.remove("active");
+  });
+
+  target.style.display = "flex";
+  target.classList.add("active");
+  current = n;
+  seen.add(n);
+
+  const meter = document.getElementById("meter");
+  const fill = document.getElementById("fill");
+
+  if (meter) meter.textContent = seen.size + " / 16 secret rooms";
+  if (fill) fill.style.width = (seen.size / 16 * 100) + "%";
+
+  score();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function score() {
+  const el = document.getElementById("stars");
+  if (el) el.textContent = "⭐ " + stars;
+}
+
+function addStar(amount = 1) {
+  stars += amount;
+  score();
+}
+
+function nameGate() {
+  const field = document.getElementById("princessName");
+  if (!field) return go(2);
+
+  const name = field.value.trim().toLowerCase();
+
+  if (
+    name.includes("chuhiya") ||
+    name.includes("princess") ||
+    name.includes("baby")
+  ) {
+    addStar();
+    go(2);
+  } else {
+    const feedback = document.querySelector("#p1 .feedback");
+    if (feedback) {
+      feedback.textContent =
+        "Hmm... the royal door is still sleepy 💗 Try your secret princess name!";
+    }
+  }
+}
+
+function check(answer, button) {
+  const feedback = button?.parentElement?.querySelector(".feedback");
+
+  if (button) {
+    button.parentElement
+      ?.querySelectorAll(".option")
+      .forEach(b => b.disabled = true);
+    button.disabled = false;
+  }
+
+  addStar();
+
+  if (feedback) {
+    feedback.textContent =
+      answer === "correct"
+        ? "The magic recognizes your heart! A secret star is yours ✨"
+        : "The door accepts your curiosity! Every answer reveals another clue 💗";
+  }
+
+  setTimeout(() => {
+    if (current < 15) go(current + 1);
+  }, 1100);
+}
+
+function firefly() {
+  flies++;
+
+  const area = document.querySelector("#p5 .tiles");
+  if (area) {
+    const fly = document.createElement("span");
+    fly.textContent = ["✨", "💗", "🦋", "⭐"][flies % 4];
+    fly.style.fontSize = "28px";
+    fly.style.padding = "8px";
+    area.appendChild(fly);
+  }
+
+  addStar();
+
+  const feedback = document.querySelector("#p5 .feedback");
+  if (feedback) {
+    feedback.textContent =
+      "You caught a little piece of magic! " + flies + " sparkles collected ✨";
+  }
+}
+
+function dance() {
+  const area = document.querySelector("#p6 .card");
+  if (area) {
+    area.animate(
+      [
+        { transform: "rotate(0deg) scale(1)" },
+        { transform: "rotate(-2deg) scale(1.04)" },
+        { transform: "rotate(2deg) scale(1.04)" },
+        { transform: "rotate(0deg) scale(1)" }
+      ],
+      { duration: 650, iterations: 2 }
+    );
+  }
+
+  addStar();
+  const feedback = document.querySelector("#p6 .feedback");
+  if (feedback) feedback.textContent = "Gubbu-Bubbu dance party unlocked! 🧸💃";
+}
+
+function candle() {
+  candles++;
+
+  const feedback = document.querySelector("#p7 .feedback");
+  if (feedback) {
+    feedback.textContent =
+      candles >= 3
+        ? "All three birthday wishes are glowing! 🎂✨"
+        : "One more little birthday sparkle! " + candles + " / 3 🕯️";
+  }
+
+  addStar();
+
+  if (candles >= 3) {
+    const cake = document.querySelector("#p7 .cake");
+    if (cake) cake.textContent = "🎂✨💗✨🎂";
+  }
+}
+
+function gift() {
+  gifts++;
+
+  const messages = [
+    "Inside is a tiny teddy hug 🧸",
+    "Inside is a pocket full of stars ⭐",
+    "Inside is a secret royal letter 💌"
+  ];
+
+  const feedback = document.querySelector("#p8 .feedback");
+  if (feedback) {
+    feedback.textContent =
+      messages[(gifts - 1) % messages.length];
+  }
+
+  addStar();
+}
+
+function bubble() {
+  bubbles++;
+
+  const feedback = document.querySelector("#p9 .feedback");
+  if (feedback) {
+    feedback.textContent =
+      "Memory bubble " + bubbles +
+      " discovered! Every little moment has its own magic 🫧💗";
+  }
+
+  addStar();
+}
+
+function password() {
+  const input = document.querySelector("#p10 input");
+  const feedback = document.querySelector("#p10 .feedback");
+  const answer = input ? input.value.trim().toLowerCase() : "";
+
+  const secrets = [
+    "chuhiya",
+    "gubbu",
+    "bubbu",
+    "love",
+    "princess",
+    "birthday"
+  ];
+
+  if (secrets.includes(answer)) {
+    if (feedback) {
+      feedback.textContent =
+        "ACCESS GRANTED 👑 The secret vault recognizes its princess!";
+    }
+
+    addStar();
+
+    setTimeout(() => go(11), 1100);
+  } else {
+    if (feedback) {
+      feedback.textContent =
+        "Incorrect secret, detective! Hint: think of your royal nickname 💗";
+    }
+  }
+}
+
+function wish() {
+  const input = document.querySelector("#p11 input");
+  const feedback = document.querySelector("#p11 .feedback");
+  const value = input ? input.value.trim() : "";
+
+  if (!value) {
+    if (feedback) feedback.textContent = "Write a tiny wish first, princess 💌";
+    return;
+  }
+
+  wishes.push(value);
+
+  if (feedback) {
+    feedback.textContent =
+      "Your wish has been sent into the royal sky ✨";
+  }
+
+  if (input) input.value = "";
+
+  addStar();
+}
+
+function celebrate() {
+  const area = document.querySelector("#p15 .card");
+
+  if (area) {
+    for (let i = 0; i < 18; i++) {
+      const confetti = document.createElement("span");
+      confetti.textContent =
+        ["💗", "🎀", "⭐", "🧸", "✨"][i % 5];
+
+      confetti.style.position = "absolute";
+      confetti.style.left = Math.random() * 90 + "%";
+      confetti.style.top = Math.random() * 85 + "%";
+      confetti.style.fontSize = "24px";
+      confetti.style.pointerEvents = "none";
+
+      area.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 2600);
+    }
+  }
+
+  const feedback = document.querySelector("#p15 .feedback");
+
+  if (feedback) {
+    feedback.textContent =
+      "THE MYSTERY IS SOLVED! Happy Birthday, Chuhiya! " +
+      "You collected " + stars + " magic stars 💗👑🧸";
+  }
+
+  addStar();
+}
+
+function celebrateFinale() {
+  celebrate();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  go(0);
+});
+</script>
