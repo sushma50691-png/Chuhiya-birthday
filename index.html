@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Chuhiya 💗</title>
+<style>
+body{margin:0;background:#fff0f5;color:#75445c;font-family:Arial,sans-serif;text-align:center}
+header{padding:40px 15px;background:linear-gradient(135deg,#ffd6e7,#ffe9d2);border-radius:0 0 30px 30px}
+h1,h2{color:#d6538a}
+main{max-width:600px;margin:auto;padding:16px}
+.card{background:white;padding:22px;margin:18px 0;border-radius:24px;box-shadow:0 5px 20px #e9a9c333}
+button{border:0;border-radius:20px;background:#ec8eb5;color:white;padding:12px;margin:5px;font-size:16px}
+#letter{display:none;line-height:1.8;text-align:left;white-space:pre-line}
+.heart{position:fixed;bottom:-30px;animation:float 7s linear infinite;pointer-events:none}
+@keyframes float{to{transform:translateY(-110vh);opacity:0}}
+</style>
+</head>
+<body>
+<header>
+<div style="font-size:48px">🎀 🌷 🧸</div>
+<h1>Happy Birthday Chuhiya!</h1>
+<p>A little world made just for YOU 💗</p>
+<p>30 October — your special day ✨</p>
+</header>
+<main>
+<section class="card">
+<h2>🌸 Your little personality quiz</h2>
+<p>Choose your perfect day</p>
+<button onclick="show('A cozy day with snacks and comfort ☁️')">Cozy day ☁️</button>
+<button onclick="show('An adventure full of new memories 🌈')">Adventure 🌈</button>
+<p>Pick your magic</p>
+<button onclick="show('A sky full of stars and wishes 🌟')">Stars 🌟</button>
+<button onclick="show('A garden full of flowers 🌷')">Flowers 🌷</button>
+<p id="answer">Choose anything that makes u smile 💗</p>
+</section>
+<section class="card">
+<h2>🎁 Mystery gift boxes</h2>
+<p>Tap a gift to reveal a surprise</p>
+<button style="font-size:35px" onclick="gift(0)">🎁</button>
+<button style="font-size:35px" onclick="gift(1)">🎀</button>
+<button style="font-size:35px" onclick="gift(2)">🧸</button>
+<p id="gift">Which one is calling ur name? 👀</p>
+</section>
+<section class="card">
+<h2>🌈 Your dream life</h2>
+<p>What's one thing u want to experience?</p>
+<input id="dream" placeholder="A dream u want to achieve" style="padding:12px;width:80%;border:1px solid pink;border-radius:12px">
+<p><button onclick="dream()">Save my wish 💌</button></p>
+<p id="wish"></p>
+</section>
+<section class="card">
+<h2>💌 A letter for u</h2>
+<p>This is about YOU and all the things that make u special</p>
+<button onclick="document.getElementById('letter').style.display='block';this.style.display='none'">Open ur letter 💗</button>
+<div id="letter">Happy birthday to u, my chuhiya 🌷💗
+
+Today is about YOU. Your happiness, your dreams, your little interests, your growth and every beautiful thing that makes u who u are.
+
+I hope this new year of ur life brings u peaceful mornings, genuine laughter, exciting opportunities and people who appreciate the person u are. I hope u get to try things u have always wanted to try and visit places that make ur heart feel full.
+
+U don't have to be perfect to deserve good things. U deserve kindness on the days u feel confident and on the days u doubt yourself too. U deserve rest without guilt, happiness without a reason and the freedom to grow into whoever u want to become.
+
+I hope u keep discovering new things about yourself and become proud of how far u have come. I hope the little things that make u smile never become boring and life surprises u in the sweetest ways.
+
+Thank u for being the person u are. I hope today makes u feel celebrated, appreciated and genuinely happy.
+
+Make wishes, eat something yummy, laugh a lot and enjoy YOUR day to the fullest.
+
+Happy birthday once again, chuhiya 🎂🎀🌷
+
+May this chapter be softer, brighter, kinder and full of dreams coming true.
+
+Always keep a little space in ur life for wonder 💗
+
+Someone who really wants to see u happy 🌸</div>
+</section>
+</main>
+<footer>Made with pink sparkles and birthday wishes 💗🎂</footer>
+<script>
+function show(t){document.getElementById('answer').textContent=t}
+function gift(n){document.getElementById('gift').textContent=[
+'🌷 U deserve kindness and beautiful days',
+'🎀 Do one little thing today just for YOUR happiness',
+'🧸 Remember to rest and be proud of yourself'
+][n]}
+function dream(){let v=document.getElementById('dream').value;document.getElementById('wish').textContent=v?'Your dream matters! Keep believing in yourself 💗':'Write a wish first 🌸'}
+for(let i=0;i<10;i++){let h=document.createElement('div');h.className='heart';h.textContent=['💗','🌸','✨'][i%3];h.style.left=(i*10)+'%';h.style.animationDelay=i%7+'s';document.body.appendChild(h)}
+</script>
+</body>
+</html>
